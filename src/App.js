@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import ListItem from './listItem';
+import { Counter } from './counter';
 
 function App() {
   return (
@@ -17,7 +19,13 @@ function App() {
         >
           Learn React
         </a>
+
+        <ListItem name={"grocery list"} number={10} ></ListItem>
+
+        <Counter></Counter>
+
       </header>
+
     </div>
   );
 }
