@@ -3,11 +3,23 @@ import './App.css';
 import { TodoList } from './todoList';
 import ListItem from './listItem';
 import { Counter } from './counter';
-import { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 function App() {
 
   const [list, setLists] = useState( [ {id: 1, task:"Tarea 1", completed: false} ] );
+  
+  const taskRef = useRef();
+  
+  const handleTaskAdd = () =>{
+    const task = taskRef.current.value;
+    if (task === '') return;
+
+    setLists( (prevTasks) => {
+      return [...prevTasks,  {id: '1234', task: task, completed: false }  ] ; 
+  });
+  taskRef.current.value = null;
+};
 
   return (
     <div className="App">
@@ -15,8 +27,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
 
         <TodoList lista={list}></TodoList>
-
-        <Counter></Counter>
+        <input type='text' placeholder="New task" ref={taskRef}></input>
+        <button onClick={handleTaskAdd}>+</button>
+        <button>-</button>
 
       </header>
 
