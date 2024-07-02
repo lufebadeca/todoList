@@ -36,6 +36,12 @@ function App() {
     setLists(newTasks); //updating the task list with a 'completed' value updated
     };
 
+    const handleClearSelected = () => {
+      //we filter and select the unchecked tasks to keep them, since the selected will be deleted
+      const newTasks = list.filter( (task)=> task.completed === false );
+      setLists(newTasks);
+    };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -44,7 +50,7 @@ function App() {
         <TodoList list={list} toggleTask={toggleTask} ></TodoList>
         <input type='text' placeholder="New task" ref={taskRef}></input>
         <button onClick={handleTaskAdd}>+</button>
-        <button>-</button>
+        <button onClick={handleClearSelected} >-</button>
 
       </header>
     </div>
