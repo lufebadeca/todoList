@@ -9,7 +9,7 @@ const Counter = (props)=>{
     return (
     <div className='container-fluid m-3 p-4'>
         <p>Quantity: {quantity}</p>
-        <label for='inputQ'>New amount</label>
+        <label htmlFor='inputQ'>New amount</label>
         <input type='number' id="inputQ" name='inputQ'></input>
         <button className='btn btn-primary btn-sm' onClick={()=>setQuantity(quantity+1)} >+</button>
         <button className='btn btn-primary btn-sm' onClick={()=>setQuantity(quantity-1)}>-</button>
