@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { TodoList } from './todoList';
 import { v4 as uuidv4 } from 'uuid';  //ID generator
@@ -13,7 +12,7 @@ import React, { useState, useRef } from 'react';
 //localStorage.setItem('test1', stringifiedList);
 //localStorage.remove('test1'); 
 
-//we create an absstraction to avoid direct mentions to localStorage in the app function (custom hook)
+//firstly, we create an absstraction to avoid direct mentions to localStorage in the app function (we embed this in a custom hook)
 function useLocalStorage (itemName, initialValue) {
 
     /*const defaultTasks =
@@ -48,8 +47,8 @@ function useLocalStorage (itemName, initialValue) {
 
   const [item, setItem] = useState(parsedItem);
 
-   //is necessary to update not only the local storage but also the state of the items list simultaneously
-   const updateItem = (newItem) =>{
+  //is necessary to update not only the local storage but also the state of the items list simultaneously
+  const updateItem = (newItem) =>{
     setItem(newItem);
     const stringifiedList = JSON.stringify(newItem);
     localStorage.setItem(itemName, stringifiedList);
@@ -61,7 +60,7 @@ function useLocalStorage (itemName, initialValue) {
 
 function App() {
 
-  //now, instead of using the rregular useState, we use our custom state, the initial state was already set in the custom state
+  //now, instead of using the regular useState, we use our custom state, the initial state was already set in the custom state, instead, we give custom parameters
   const [list, updateItem] = useLocalStorage('test1', []); 
   const [searchValue, setSearchValue] = useState("");
 
@@ -92,23 +91,23 @@ function App() {
 
     task.completed = !task.completed; // if true, turns into false, if false, into true
     updateItem(newTasks); //updating the task list with a 'completed' value updated
-    };
+  };
 
-    const handleClearByID = (id) => {
-      //we filter and select all tasks different from the current one to keep, and the current one will be deleted
-      const newTasks = list.filter( (task)=> task.id !== id );
-      updateItem(newTasks);
-    };
+  const handleClearByID = (id) => {
+    //we filter and select all tasks different from the current one to keep, and the current one will be deleted
+    const newTasks = list.filter( (task)=> task.id !== id );
+    updateItem(newTasks);
+  };
 
-    //derived state, updates searchValue every time input text is updated (toLowerCase for all coincidences)
-    const filteredList = list.filter( 
-      (taskItem)=> taskItem.text.toLowerCase().includes(searchValue)
-    );
+  //derived state, updates searchValue every time input text is updated (toLowerCase for all coincidences)
+  const filteredList = list.filter( 
+    (taskItem)=> taskItem.text.toLowerCase().includes(searchValue)
+  );
 
-    //function to update search value
-    const updateSearchVal = (text)=>{
-      setSearchValue(text);
-    }
+  //function to update search value
+  const updateSearchVal = (text)=>{
+    setSearchValue(text);
+  }
 
 
   return (
