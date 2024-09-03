@@ -1,10 +1,11 @@
 import './App.css';
-import { TodoList } from './todoList';
+import { TodoList } from '../todoList/todoList';
 import { v4 as uuidv4 } from 'uuid';  //ID generator
-import { Counter } from './counter';
-import SearchInput from  './SearchInput';
+import { Counter } from '../counter/counter';
+import SearchInput from  '../SearchInput/SearchInput';
+import { AppUI } from './AppUI';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 //In this project, I successfully used UseState to update the state of the variable list
 
@@ -109,9 +110,22 @@ function App() {
     setSearchValue(text);
   }
 
+  console.log('log 1');
+  useEffect( () => { console.log('effect log 2'); }, [] );
+  console.log('log 3');
+
 
   return (
-    <div className="App">
+    <AppUI
+    completed={ list.filter(item=>item.completed).length }
+    total={list.length}
+    filteredList={filteredList}
+    searchValue={searchValue}
+    updateSearchVal={updateSearchVal}
+    toggleTask={toggleTask}
+    handleClearByID={handleClearByID}
+    ></AppUI>
+    /*<div className="App">
       <header className="App-header">
 
         <Counter completed={ list.filter(item=>item.completed).length } total={list.length} ></Counter>
@@ -123,7 +137,7 @@ function App() {
         <button className='addButton' data-message="Click me to submit"><i className='bi bi-plus' ></i></button>
 
       </header>
-    </div>
+    </div>*/
   );
 }
 
