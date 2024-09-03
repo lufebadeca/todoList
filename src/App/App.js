@@ -65,6 +65,9 @@ function App() {
   const [list, updateItem] = useLocalStorage('test1', []); 
   const [searchValue, setSearchValue] = useState("");
 
+  const completedItems = list.filter(item=> !!item.completed).length;
+  const totalItems = list.length;
+
   //reference to retrieve data from input and use in handle
   const taskRef = useRef();
   const taskFilterRef = useRef();
@@ -117,8 +120,8 @@ function App() {
 
   return (
     <AppUI
-    completed={ list.filter(item=>item.completed).length }
-    total={list.length}
+    completed={ completedItems }
+    total={totalItems}
     filteredList={filteredList}
     searchValue={searchValue}
     updateSearchVal={updateSearchVal}
