@@ -1,10 +1,6 @@
 import './App.css';
-import { TodoList } from '../todoList/todoList';
 import { v4 as uuidv4 } from 'uuid';  //ID generator
-import { Counter } from '../counter/counter';
-import SearchInput from  '../SearchInput/SearchInput';
 import { AppUI } from './AppUI';
-
 import React, { useState, useRef, useEffect } from 'react';
 
 //In this project, I successfully used UseState to update the state of the variable list
@@ -114,7 +110,7 @@ function App() {
   }
 
   console.log('log 1');
-  useEffect( () => { console.log('effect log 2'); }, [] );
+  useEffect( () => { console.log('effect log 2'); }, [totalItems] );
   console.log('log 3');
 
 
