@@ -1,0 +1,45 @@
+.counter {
+  padding: 15px;
+  margin: 20px;
+  font-size: larger;
+  font-weight: 300;
+  cursor:default;
+}
+
+.counter span {
+  font-weight: bold;
+}
+
+.CircularProgressbar-path {
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.CircularProgressbar-text{
+  text-align: center;
+  font-weight: 700;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor:default;
+}
+  /* Progress bar */
+.CircularProgressbar {
+  margin-bottom: 25px;
+  /* transform: rotate(-90deg);Rotate to start from the top */
+}
+
+.CircularProgressbar-trail {
+  stroke: #eee;
+  /* Background color */
+}
+
+.CircularProgressbar-path {
+  stroke: #3e98c7;
+  /* Progress color */
+}
+
+.CircularProgressbar-text {
+  fill: #3e98c7;
+  /* Text color */
+  font-size: 18px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}

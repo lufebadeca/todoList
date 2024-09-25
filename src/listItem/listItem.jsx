@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import './listItem.css'
 
 //Here, the actual list item is converted into a <li></li> HTML element
 export function ListItem( props ) {
@@ -18,22 +19,16 @@ export function ListItem( props ) {
     };
 
     return (
-      <Card className="list-item">
-        <Row className="align-items-center justify-content-between">
-          <Col xs={2} className="text-start">
-            <i className="bi bi-check" onClick={updateCheck} style={{ fontSize: '2rem', color: completed ? 'lightgray' : 'green' } }></i>
-          </Col>
-          <Col xs={8} className="text-center">
-            <li className={completed ? 'completed' : ''} >
-              {text}
-            </li>
-          </Col>
-          <Col xs={2} className="text-end" >
-          <i className="bi-x" style={{color: 'red'}} onClick={clearCurrentItem}></i>
-          </Col>
-          
-        </Row>
-
-      </Card>
+      <li className="List-item">
+        <span>
+          <i className="bi-check" onClick={updateCheck} style={{ fontSize: '2rem', color: completed ? 'lightgray' : 'green' } }></i>
+        </span>
+        <p className={`List-item-p ${completed ? 'completed' : '' }`}>
+          {text}
+        </p>
+        <span className="Icon-delete" >
+          <i className="bi-x-lg" style={{color: 'red'}} onClick={clearCurrentItem}></i>
+        </span>
+      </li>
     );
   }

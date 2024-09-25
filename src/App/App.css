@@ -1,130 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #edeed2;
+  color: #1E1E1F;
+  font-family: 'Ubuntu';
+}
+
 .App {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+
   margin: 0;
+  padding:0;
   font-family: 'Ubuntu';
   font-weight: 400;
+  border: 2px solid #3e98c7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #dcc4c4;
-  width: 550px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(4px + 2vmin);
-  color: white;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.counter{
-  padding: 15px;
-  margin: 20px;
-  font-size: larger;
-  font-weight: 300;
-}
-
-.counter span{
-  font-weight: bold;
-}
-
-.mylist{
-  list-style: none;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0
-}
-
-.list-item{
-  color: rgb(5, 5, 5);
-  width: 100%;
-  background: whitesmoke;
-  margin: 10px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 2px 4px rgb(77, 57, 77);
-}
-
-.label {
-  font-size: 5px;
-}
-
-.input {
-  width: 70%;
-  border: 1px solid black;
-  margin: 0px 5px 35px 5px;
-  box-shadow: 0px 2px 4px rgb(62, 47, 62);
-
-}
-
-#searchBox::placeholder{
-  color: #A5A5A5;
-  font-family: 'Ubuntu';
-  font-weight: 400;
-  font-size: 15px;
-}
-
-#searchBox:focus{
-  outline-color:rgb(124, 220, 220);
-}
-
-.completed{
-  text-decoration:  line-through;
-  color: rgb(207, 206, 206);
-}
-
-.bi-check, .bi-x:hover{
-  cursor: pointer;
-}
-
-.addButton{
-  background-color: rgb(124, 220, 220);
+.addButton {
+  background-color: rgb(58, 185, 201);
   box-shadow: 0px 2px 4px rgb(77, 57, 77);
   border: none;
   border-radius: 50%;
   cursor: pointer;
   font-size: 50px;
   font-weight: bold;
-  color:aliceblue;
+  color: aliceblue;
 
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 34px;
+  right: 34px;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
+
   height: 60px;
   width: 60px;
 
@@ -133,27 +47,8 @@
   transition: .15s ease;
 }
 
-.addButton:hover{
+.addButton:hover {
   transform: rotate(270deg);
+  background-color: aqua;
 }
 
-/* Progress bar */
-.CircularProgressbar {
-  margin-bottom: 25px;
-   /* transform: rotate(-90deg);Rotate to start from the top */
-}
-
-.CircularProgressbar-trail {
-  stroke: #eee; /* Background color */
-}
-
-.CircularProgressbar-path {
-  stroke: #3e98c7; /* Progress color */
-}
-
-.CircularProgressbar-text {
-  fill: #3e98c7; /* Text color */
-  font-size: 18px;
-  text-anchor: middle;
-  dominant-baseline: middle;
-}

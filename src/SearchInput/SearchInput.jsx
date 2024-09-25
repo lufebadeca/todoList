@@ -1,4 +1,5 @@
 import React from "react";
+import './searchInput.css';
 
 const SearchInput = ({searchValue, updateSearchVal}) =>{
 
@@ -9,8 +10,8 @@ const SearchInput = ({searchValue, updateSearchVal}) =>{
 
     return(
         <>
-        <label htmlFor='searchBox' className='text-muted' >Search</label>
-          <input type='text' id='searchBox' name='searchBox' placeholder="New task" value={searchValue} onChange={updateText} className='input'></input>
+            <label htmlFor='searchBox' >Filtrar tareas</label>
+            <input type='text' id='searchBox' name='searchBox' placeholder="busca una tarea aquí " value={searchValue} onChange={updateText} className='input'></input>
         </>
     )
 }
