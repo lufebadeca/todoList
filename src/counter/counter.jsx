@@ -6,7 +6,8 @@ const Counter = ( {completed, total} )=>{
 
     //useState is the first hook, destructured into two objects, the variable (init=0) and the function.
     //const [quantity, setQuantity] = useState(0);
-    const percentage = (completed / total) * 100;
+    let percentage;
+    total!==0 ? percentage = (completed / total) * 100 : percentage=0; 
     const radius = 50; // Radius of the circle
     const circumference = 2 * Math.PI * radius; // Circumference of the circle
     const offset = circumference - (percentage / 100) * circumference;

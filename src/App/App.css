@@ -4,6 +4,7 @@ body {
   background-color: #edeed2;
   color: #1E1E1F;
   font-family: 'Ubuntu';
+  height: 100vh;
 }
 
 .App {
@@ -11,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  
 
   margin: 0;
   padding:0;
