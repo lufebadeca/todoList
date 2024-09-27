@@ -1,8 +1,12 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './counter.css'
+import {TodoContext} from "../TodoContext"
 
-const Counter = ( {completed, total} )=>{
+const Counter = ( )=>{
+
+    //UseContext
+    const { completedItems: completed, totalItems: total} = React.useContext(TodoContext);
 
     //useState is the first hook, destructured into two objects, the variable (init=0) and the function.
     //const [quantity, setQuantity] = useState(0);

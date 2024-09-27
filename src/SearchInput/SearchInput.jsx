@@ -1,7 +1,11 @@
 import React from "react";
 import './searchInput.css';
+import { TodoContext } from "../TodoContext";
 
-const SearchInput = ({searchValue, updateSearchVal}) =>{
+const SearchInput = ( ) =>{
+
+    //useContext
+    const {searchValue, updateSearchVal} = React.useContext(TodoContext);
 
     const updateText = (e) =>{
         const newVal = e.target.value;
