@@ -1,11 +1,16 @@
+import React, {useState} from "react";
 import { Counter } from "../counter/counter";
 import SearchInput from "../SearchInput/SearchInput";
 import { TodoList } from "../todoList/todoList";
+import { TodoContext } from "../TodoContext";
+import {Modal} from "../Modal";
+import { TodoForm } from "../TodoForm";
 
-const AppUI = ( {completed, total, filteredList, searchValue, updateSearchVal, toggleTask, handleClearByID, loading, error} ) => {
+const AppUI = ( ) => {
+  const { openModal, setOpenModal } = React.useContext(TodoContext);
+
 return (
     <div className="App">
-      <header className="App-header">
 
         <Counter></Counter>
 
@@ -13,9 +18,9 @@ return (
         
         <TodoList></TodoList>
 
-        <button className='addButton' data-message="Click me to submit"><i className='bi bi-plus' ></i></button>
+        <button className='addButton' data-message="Click me to submit"><i className='bi bi-plus' onClick={() => setOpenModal( !openModal) } ></i></button>
 
-      </header>
+        {openModal && <Modal> <TodoForm></TodoForm> </Modal>}
     </div>
   );
 }

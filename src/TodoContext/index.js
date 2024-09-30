@@ -10,10 +10,19 @@ function TodoProvider({children}){
     //set in the custom state, instead, we give custom parameters: itemName and initial val
     //edit, to add loading and error states
     const {storageItem: list, updateItem, loading, error} = useLocalStorage('test1', []); 
-    const [searchValue, setSearchValue] = useState("");
+    console.log("My list is:");
     console.log(list);
+    const [searchValue, setSearchValue] = useState("");
+    const [openModal, setOpenModal] = useState(false);
     const completedItems = list.filter(item=> !!item.completed).length;
     const totalItems = list.length;
+
+    const addTask = (taskText) =>{
+        console.log("function addTask in todoContext. Receiving " + taskText);
+        const newTasks = [...list]; //copy tasks list
+        newTasks.push({text: taskText, completed: false})
+        updateItem(newTasks);
+    };
 
     const toggleTask = (id) => {
         //copy tasks list
@@ -43,7 +52,7 @@ function TodoProvider({children}){
     }
 
     return(
-        <TodoContext.Provider value={ {completedItems, totalItems, filteredList, searchValue, updateSearchVal, toggleTask, handleClearByID, loading, error} }>
+        <TodoContext.Provider value={ {addTask, completedItems, totalItems, filteredList, searchValue, updateSearchVal, toggleTask, handleClearByID, loading, error, openModal, setOpenModal} }>
             {children}
         </TodoContext.Provider>
 

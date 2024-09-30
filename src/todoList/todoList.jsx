@@ -15,9 +15,10 @@ export function TodoList( ){
 
     return(
     <ul className='mylist'>
+        
         {loading && <><LoadingTodos/><LoadingTodos/><LoadingTodos/><LoadingTodos/></>}
         {error && <TodosError/>}
-        {(!loading && list.length===0) && <EmptyTodos/>}
+        {(!loading && !error && list.length===0) && <EmptyTodos/>}
 
         {list.map( listItem=>(
             <ListItem key={listItem.id} {...listItem} id={listItem.id} toggleTask={toggleTask} handleClearByID={handleClearByID}></ListItem>
