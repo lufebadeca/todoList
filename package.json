@@ -2,7 +2,7 @@
   "name": "first-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lufebadeca.github.io/whatsappshortcut/build",
+  "homepage": "https://lufebadeca.github.io/todoList/build",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
