@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/lufebadeca/todoList/build/static/css/main.54c0211c.css",
-    "main.js": "/lufebadeca/todoList/build/static/js/main.b838438b.js",
-    "static/media/bootstrap-icons.woff?": "/lufebadeca/todoList/build/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
-    "static/media/bootstrap-icons.woff2?": "/lufebadeca/todoList/build/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
-    "index.html": "/lufebadeca/todoList/build/index.html",
-    "main.54c0211c.css.map": "/lufebadeca/todoList/build/static/css/main.54c0211c.css.map",
-    "main.b838438b.js.map": "/lufebadeca/todoList/build/static/js/main.b838438b.js.map"
+    "main.css": "/whatsappshortcut/build/static/css/main.41b2ae12.css",
+    "main.js": "/whatsappshortcut/build/static/js/main.b838438b.js",
+    "static/media/bootstrap-icons.woff?": "/whatsappshortcut/build/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/whatsappshortcut/build/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "index.html": "/whatsappshortcut/build/index.html",
+    "main.41b2ae12.css.map": "/whatsappshortcut/build/static/css/main.41b2ae12.css.map",
+    "main.b838438b.js.map": "/whatsappshortcut/build/static/js/main.b838438b.js.map"
   },
   "entrypoints": [
-    "static/css/main.54c0211c.css",
+    "static/css/main.41b2ae12.css",
     "static/js/main.b838438b.js"
   ]
 }
