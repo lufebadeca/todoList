@@ -1,8 +1,9 @@
 import React from "react";
+import "./empty.css";
 
 function EmptyTodos() {
     return (
-        <p>Agrega tu primer ToDo</p>
+        <p>Aun no has agregado un ToDo</p>
     );
     
 }

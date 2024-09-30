@@ -19,8 +19,9 @@ const Counter = ( )=>{
     return (
     <>
       <br></br>
-      <h2 className='counter' variant='success'>
-      Has completado <span>{completed}</span> de <span>{total}</span> tareas
+      <h2 className='counter'>
+      Has completado <span>{completed}</span> de <span>{total}</span> tareas. <br></br>
+      { (percentage===100) && "Felicidades!" }
       </h2>
 
       <div className='progressBar'>

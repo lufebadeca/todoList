@@ -47,10 +47,11 @@
     position: absolute;
     top: -12px;
     right: 0;
+    color: lightgray;
   }
   
   .Icon-delete:hover {
-    color: red
+    color: red;
   }
 
   .completed {

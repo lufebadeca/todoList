@@ -3,14 +3,14 @@ import React from "react";
 //localStorage.removeItem('test1);
     /*const defaultTasks =
   [
-  {id: 1, text: 'despertar', completed: true},
-  {id: 2, text: 'cepillar dientes', completed: false},
-  {id: 3, text: 'preparar desayuno', completed: false},
-  {id: 4, text: 'bañarse', completed: false},
-  {id: 5, text: 'arreglarse', completed: false},
-  {id: 6, text: 'desayunar', completed: false},
-  {id: 7, text: 'tomar el bus', completed: false},
-  {id: 8, text: 'disfrutar la escuela', completed: false}
+  {text: 'despertar', completed: true},
+  {text: 'cepillar dientes', completed: false},
+  {text: 'preparar desayuno', completed: false},
+  {text: 'bañarse', completed: false},
+  {text: 'arreglarse', completed: false},
+  {text: 'desayunar', completed: false},
+  {text: 'tomar el bus', completed: false},
+  {text: 'disfrutar la escuela', completed: false}
   ];
 
   localStorage.setItem('test1', JSON.stringify(defaultTasks) ); */
@@ -54,7 +54,6 @@ function useLocalStorage (itemName, initialValue) {
 
   //is necessary to update not only the local storage but also the state of the items list simultaneously
   const updateItem = (newItem) =>{
-    console.log("function updateItem in useLocalStorage. Receiving " + newItem);
     setStorageItem(newItem);
     const stringifiedList = JSON.stringify(newItem);
     localStorage.setItem(itemName, stringifiedList);

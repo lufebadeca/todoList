@@ -11,16 +11,16 @@ import {LoadingTodos} from '../loadingTodos';
 export function TodoList( ){
 
     //useContext
-    const {filteredList: list, toggleTask, handleClearByID, loading, error} = React.useContext(TodoContext);
+    const { filteredList, list, toggleTask, handleClearByID, loading, error} = React.useContext(TodoContext);
 
     return(
     <ul className='mylist'>
-        
+
         {loading && <><LoadingTodos/><LoadingTodos/><LoadingTodos/><LoadingTodos/></>}
         {error && <TodosError/>}
         {(!loading && !error && list.length===0) && <EmptyTodos/>}
 
-        {list.map( listItem=>(
+        {filteredList.map( listItem=>(
             <ListItem key={listItem.id} {...listItem} id={listItem.id} toggleTask={toggleTask} handleClearByID={handleClearByID}></ListItem>
         ))} 
     </ul>

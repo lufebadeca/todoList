@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/todoList/build/static/css/main.cc0bfe6d.css",
-    "main.js": "/todoList/build/static/js/main.b838438b.js",
+    "main.css": "/todoList/build/static/css/main.fd43f544.css",
+    "main.js": "/todoList/build/static/js/main.02aa7bba.js",
     "static/media/bootstrap-icons.woff?": "/todoList/build/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/todoList/build/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "index.html": "/todoList/build/index.html",
-    "main.cc0bfe6d.css.map": "/todoList/build/static/css/main.cc0bfe6d.css.map",
-    "main.b838438b.js.map": "/todoList/build/static/js/main.b838438b.js.map"
+    "main.fd43f544.css.map": "/todoList/build/static/css/main.fd43f544.css.map",
+    "main.02aa7bba.js.map": "/todoList/build/static/js/main.02aa7bba.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc0bfe6d.css",
-    "static/js/main.b838438b.js"
+    "static/css/main.fd43f544.css",
+    "static/js/main.02aa7bba.js"
   ]
 }

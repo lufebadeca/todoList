@@ -3,7 +3,6 @@ import { createPortal } from "react-dom";
 import "./Modal.css";
 
 function Modal( {children} ){
-    const isVisible=true;
 
     return createPortal(
         <div className="mymodal">
