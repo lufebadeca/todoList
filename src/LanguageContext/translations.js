@@ -13,10 +13,11 @@ export const translations = {
         cancel: "Cancel",
         deleteTodo: "Delete ToDo",
         completed: "Completed",
-        // Otras palabras clave en inglés
+        addPlaceholder: "Bath the cat",
+        error: "Ooops, there was an error"
     },
-    es: {
-        HaveCompleted: "Has completado",
+    sp: {
+        haveCompleted: "Has completado",
         from: "de",
         tasks: "tareas.",
         filter: "filtrar tareas",
@@ -28,6 +29,7 @@ export const translations = {
         cancel: "Cancelar",
         deleteTodo: "Eliminar Tarea",
         completed: "Completado",
-        // Otras palabras clave en español
+        addPlaceholder: "Bañar al gato",
+        error: "Uups, hubo un error"
     }
 };

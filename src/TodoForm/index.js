@@ -1,9 +1,12 @@
 import React from "react";
 import { TodoContext } from "../TodoContext";
 import "./TodoForm.css";
+import {useLanguage } from "../LanguageContext";
 
 
 function TodoForm() {
+
+    const {t}=useLanguage(); //translations for current language
 
     const [newTaskVal, setNewTaskVal] = React.useState("");
     const {addTask, setOpenModal, list} = React.useContext(TodoContext);
@@ -29,11 +32,11 @@ function TodoForm() {
 
     return(
         <form onSubmit={onSubmit}>
-            <label>Agregue una nueva tarea</label>
-            <textarea onChange={onChange} value={newTaskVal} placeholder="alimentar al gato" required autoFocus></textarea>
+            <label>{t.addTodo}</label>
+            <textarea onChange={onChange} value={newTaskVal} placeholder={t.addPlaceholder} required autoFocus></textarea>
             <div className="TodoForm-buttonContainer">
-                <button className="TodoForm-button TodoForm-button--cancel" onClick={()=>setOpenModal(false)}>Cancelar</button>
-                <button className="TodoForm-button TodoForm-button--add" >Añadir</button>
+                <button className="TodoForm-button TodoForm-button--cancel" onClick={()=>setOpenModal(false)}>{t.cancel}</button>
+                <button className="TodoForm-button TodoForm-button--add">{t.add}</button>
             </div>
         </form>
     )

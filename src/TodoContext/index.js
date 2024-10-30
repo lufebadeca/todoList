@@ -68,7 +68,6 @@ function TodoProvider({children}){
 
         const newList = [...list];
         const index = newList.findIndex( (item)=> item.text===itemText );
-        const newItem = { text: itemText, completed: completedBool };
 
         if(direction==="up" && index>0){
             [newList[index - 1], newList[index]] = [newList[index], newList[index - 1]];

@@ -1,8 +1,12 @@
 import React from "react";
+import { useLanguage } from "../LanguageContext";
 
 function TodosError() {
+
+    const {t} = useLanguage();  //translations for current language
+
     return (
-        <p>Uuups. Hubo un error</p>
+        <p>{t.error}</p>
     );
 }
 

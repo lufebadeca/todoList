@@ -1,9 +1,13 @@
 import React from "react";
 import "./empty.css";
+import {useLanguage } from "../LanguageContext"
 
 function EmptyTodos() {
+
+    const { t } = useLanguage(); //translations for current language
+
     return (
-        <p>Aun no has agregado un ToDo</p>
+        <p>{ t.notAdded }</p>
     );
     
 }

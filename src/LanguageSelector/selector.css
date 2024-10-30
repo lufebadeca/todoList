@@ -1,0 +1,23 @@
+.lang-selector{
+    width: auto;
+    position: relative;
+    top: 10px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #3e98c7;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+.selected{
+    background-color: #FF7A59;
+    opacity: 0.7;
+    transition-property: "background-color" ;
+    transition-duration: 350ms ;
+}
+
+img{
+    width: 40px;
+    height: auto;
+}

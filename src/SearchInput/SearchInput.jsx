@@ -1,8 +1,11 @@
 import React from "react";
 import './searchInput.css';
 import { TodoContext } from "../TodoContext";
+import {useLanguage } from "../LanguageContext";
 
 const SearchInput = ( ) =>{
+
+    const {t} = useLanguage(); //translations for current language
 
     //useContext
     const {searchValue, updateSearchVal} = React.useContext(TodoContext);
@@ -14,8 +17,11 @@ const SearchInput = ( ) =>{
 
     return(
         <>
-            <label htmlFor='searchBox' >Filtrar tareas</label>
-            <input type='text' id='searchBox' name='searchBox' placeholder="busca una tarea aquí " value={searchValue} onChange={updateText} className='input'></input>
+            <label htmlFor='searchBox' >{t.filter}</label>
+            <input type='text' id='searchBox' name='searchBox' 
+                placeholder={t.filterPlaceholder} value={searchValue} 
+                onChange={updateText} className='input'>
+            </input>
         </>
     )
 }

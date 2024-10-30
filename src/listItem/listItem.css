@@ -91,8 +91,8 @@
 .down-btn{
     position: absolute;
     left: 50%;
-    top: 90%;
-    color: rgb(169, 189, 207);
+    top: 84%;
+    color: rgb(160, 176, 190);
     cursor: pointer;
     transition-duration: 1s;
 }

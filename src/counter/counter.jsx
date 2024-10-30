@@ -1,9 +1,12 @@
 import React from "react"
-import 'bootstrap/dist/css/bootstrap.min.css'
 import './counter.css'
 import {TodoContext} from "../TodoContext"
+import {useLanguage } from "../LanguageContext"
 
 const Counter = ( )=>{
+
+    //lang context
+    const { t} = useLanguage(); //translations for current language
 
     //UseContext
     const { completedItems: completed, totalItems: total} = React.useContext(TodoContext);
@@ -20,7 +23,7 @@ const Counter = ( )=>{
     <>
       <br></br>
       <h2 className='counter'>
-      Has completado <span>{completed}</span> de <span>{total}</span> tareas. <br></br>
+      {t.haveCompleted} <span>{completed}</span> {t.from} <span>{total}</span> {t.tasks} <br></br>
       { (percentage===100) && "Felicidades!" }
       </h2>
 

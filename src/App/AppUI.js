@@ -5,12 +5,18 @@ import { TodoList } from "../todoList/todoList";
 import { TodoContext } from "../TodoContext";
 import {Modal} from "../Modal";
 import { TodoForm } from "../TodoForm";
+import { useLanguage } from "../LanguageContext";
+import { LanguageSelector } from "../LanguageSelector";
 
 const AppUI = ( ) => {
   const { openModal, setOpenModal, editing } = React.useContext(TodoContext);
 
+  const { language, toggleLanguage } = useLanguage();
+
 return (
     <div className="App">
+
+        <LanguageSelector></LanguageSelector>
 
         <Counter></Counter>
 
