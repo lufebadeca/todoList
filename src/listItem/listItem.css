@@ -62,3 +62,58 @@
   .bi-check, .bi-x-lg:hover {
     cursor: pointer;
   }
+
+  .up-btn{
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    color: rgb(169, 189, 207);
+    cursor: pointer;
+    transition-duration: 400ms;
+
+}
+.up-btn:hover{
+    scale: 1.4;
+    color: lightcoral
+}
+
+.down-btn{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    color: rgb(169, 189, 207);
+    cursor: pointer;
+    transition-duration: 1s;
+}
+.down-btn:hover{
+  scale: 1.4;
+  color: lightcoral;
+}
+
+.move-up {
+  animation: moveUp 0.4s forwards;
+  z-index: 1;
+}
+
+.move-down {
+  animation: moveDown 0.4s forwards;
+  z-index: 1;
+}
+
+@keyframes moveUp {
+0% {
+  transform: translateY(0px);
+}
+100% {
+  transform: translateY(-45px);
+}
+}
+
+@keyframes moveDown {
+0% {
+  transform: translateY(0px);
+}
+100% {
+  transform: translateY(45px);
+}
+}

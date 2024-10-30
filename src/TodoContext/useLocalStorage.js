@@ -54,7 +54,7 @@ function useLocalStorage (itemName, initialValue) {
 
   //is necessary to update not only the local storage but also the state of the items list simultaneously
   const updateItem = (newItem) =>{
-    setStorageItem(newItem);
+    setStorageItem(newItem);  //updatinf the state first
     const stringifiedList = JSON.stringify(newItem);
     localStorage.setItem(itemName, stringifiedList);
   };

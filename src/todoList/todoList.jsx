@@ -11,7 +11,7 @@ import {LoadingTodos} from '../loadingTodos';
 export function TodoList( ){
 
     //useContext
-    const { filteredList, list, toggleTask, handleClearByID, loading, error} = React.useContext(TodoContext);
+    const { filteredList, list, toggleTask, handleClearByID, moveItem, loading, error} = React.useContext(TodoContext);
 
     return(
     <ul className='mylist'>
@@ -21,7 +21,7 @@ export function TodoList( ){
         {(!loading && !error && list.length===0) && <EmptyTodos/>}
 
         {filteredList.map( listItem=>(
-            <ListItem key={listItem.id} {...listItem} id={listItem.id} toggleTask={toggleTask} handleClearByID={handleClearByID}></ListItem>
+            <ListItem key={listItem.id} {...listItem} id={listItem.id} toggleTask={toggleTask} handleClearByID={handleClearByID} moveItem={moveItem}></ListItem>
         ))} 
     </ul>
 );

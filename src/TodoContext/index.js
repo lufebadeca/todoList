@@ -6,9 +6,9 @@ const TodoContext = React.createContext();
 
 function TodoProvider({children}){
 
-      //now, instead of using the regular useState, we use our custom state, the initial state was already
-    //set in the custom state, instead, we give custom parameters: itemName and initial val
-    //edit, to add loading and error states
+    /*now, instead of using the regular useState, we use our custom state, the initial state was already
+    set in the custom state, instead, we give custom parameters: itemName and initial val
+    edited for adding loading and error states*/
     const {storageItem: list, updateItem, loading, error} = useLocalStorage('test1', []); 
     const [searchValue, setSearchValue] = useState("");
     const [openModal, setOpenModal] = useState(false);
@@ -48,8 +48,27 @@ function TodoProvider({children}){
         setSearchValue(text);
     }
 
+    const moveItem=(itemText, completedBool, direction)=>{
+
+        const newList = [...list];
+        const index = newList.findIndex( (item)=> item.text==itemText );
+        console.log(index);
+        const newItem = { text: itemText, completed: completedBool };
+
+        if(direction==="up" && index>0){
+            newList.splice(index,1);    //deletes the found item
+            newList.splice(index-1, 0, newItem) //adds the same element in a place after
+            updateItem(newList);
+        }
+        if(direction==="down" && index < newList.length-1 ){
+            newList.splice(index,1);    //deletes the found item
+            newList.splice(index+1, 0, newItem) //adds the same element in a place before
+            updateItem(newList);
+        }
+    }
+
     return(
-        <TodoContext.Provider value={ {addTask, completedItems, totalItems, list, filteredList, searchValue, updateSearchVal, toggleTask, handleClearByID, loading, error, openModal, setOpenModal} }>
+        <TodoContext.Provider value={ {addTask, completedItems, totalItems, list, filteredList, searchValue, updateSearchVal, moveItem, toggleTask, handleClearByID, loading, error, openModal, setOpenModal} }>
             {children}
         </TodoContext.Provider>
     );

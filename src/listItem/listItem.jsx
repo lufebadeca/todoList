@@ -6,7 +6,7 @@ import './listItem.css'
 //Here, the actual list item is converted into a <li></li> HTML element
 export function ListItem( props ) {
 
-    const { text, completed, toggleTask, handleClearByID } = props;
+    const { text, completed, toggleTask, handleClearByID, moveItem } = props;
 
     const updateCheck = ()=>{
       toggleTask(text);
@@ -25,6 +25,25 @@ export function ListItem( props ) {
   
     const handleMouseLeave = () => {
       setHovered(false);
+    };
+
+    const rearrangeList = (e)=>{
+      if(e.target.classList.contains("up-btn")){
+        e.target.closest('li').classList.add("move-up");  //adds animation class to li
+        setTimeout( ()=>{
+          moveItem(text, completed, "up"); //new method to rearrange list
+          e.target.closest('li').classList.remove("move-up");
+        }, 400 );
+      }
+      if(e.target.classList.contains("down-btn")){
+        e.target.closest('li').classList.add("move-down"); //adds animation class to li
+        
+        setTimeout( ()=>{
+          moveItem(text, completed, "down");//new method to rearrange list
+          e.target.closest('li').classList.remove("move-down");
+        }, 400 );
+        //
+      }
     };
 
     return (
@@ -53,6 +72,8 @@ export function ListItem( props ) {
         <span className="Icon-delete" >
           <i className="bi-x-lg" onClick={clearCurrentItem} ></i>
         </span>
+        <span className="up-btn" onClick={rearrangeList}>▲</span>
+        <span className="down-btn" onClick={rearrangeList}>▼</span>
       </li>
     );
   }
