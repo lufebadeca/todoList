@@ -17,15 +17,15 @@ function TodoForm() {
 
     const onSubmit=(e)=>{
         e.preventDefault();
-        const coincidences = list.filter( (item)=>item.text===newTaskVal.trim() );
+        const coincidences = list.filter( (item)=>item.text===newTaskVal.trim().toLowerCase() );
         //console.log(coincidences);
         if( newTaskVal.trim().length===0 ){
-            alert("Ingrese un texto para continuar");
+            alert(t.addTodo);
         }else if ( coincidences.length>0 ){
-            alert("Ya existe una tarea exactamente igual");
+            alert(t.alreadyExists);
             setNewTaskVal("");
         }else{
-            addTask( newTaskVal.trim() );
+            addTask( newTaskVal.trim().toLowerCase() );
             setOpenModal(false);
         }
     };

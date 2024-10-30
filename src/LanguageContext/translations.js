@@ -14,7 +14,9 @@ export const translations = {
         deleteTodo: "Delete ToDo",
         completed: "Completed",
         addPlaceholder: "Bath the cat",
-        error: "Ooops, there was an error"
+        error: "Ooops, there was an error",
+        congrats: "Congratulations!",
+        alreadyExists: "This task already exists"
     },
     sp: {
         haveCompleted: "Has completado",
@@ -30,6 +32,8 @@ export const translations = {
         deleteTodo: "Eliminar Tarea",
         completed: "Completado",
         addPlaceholder: "Bañar al gato",
-        error: "Uups, hubo un error"
+        error: "Uups, hubo un error",
+        congrats: "¡Felicidades!",
+        alreadyExists: "Esta tarea ya existe"
     }
 };

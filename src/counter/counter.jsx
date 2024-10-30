@@ -24,7 +24,7 @@ const Counter = ( )=>{
       <br></br>
       <h2 className='counter'>
       {t.haveCompleted} <span>{completed}</span> {t.from} <span>{total}</span> {t.tasks} <br></br>
-      { (percentage===100) && "Felicidades!" }
+      { (percentage===100) && t.congrats }
       </h2>
 
       <div className='progressBar'>

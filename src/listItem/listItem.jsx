@@ -2,13 +2,14 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './listItem.css'
-import { TodoContext } from "../TodoContext";
+import { useLanguage } from "../LanguageContext";
 
 //Here, the actual list item is converted into a <li></li> HTML element
 export function ListItem( props ) {
 
+    const {t} = useLanguage();
+
     const { text, completed, toggleTask, handleClearByID, editTaskItem, moveItem } = props;
-    const { openModal, setOpenModal, editing, setEditing } = React.useContext(TodoContext);
 
     const updateCheck = ()=>{
       toggleTask(text);
@@ -32,8 +33,10 @@ export function ListItem( props ) {
     const editTask=()=>{
       //setEditing(true);
       //setOpenModal(true);
-      const newText= prompt("Ingrese el nuevo texto", text);
-      editTaskItem(text, newText);
+      const newText= prompt(t.editTask, text).toLowerCase();
+      if (newText){
+        editTaskItem(text, newText);
+      }
     }
 
     const rearrangeList = (e)=>{

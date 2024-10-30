@@ -1,15 +1,20 @@
 // LanguageContext.js
 import React, { createContext, useState, useContext } from 'react';
 import { translations } from './translations';
+import { useLocalStorage } from '../TodoContext/useLocalStorage';
 
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('en');
+
+    const loadedLang = localStorage.getItem("lang");
+    const [language, setLanguage] = useState(loadedLang);
 
     const toggleLanguage = () => {
-        setLanguage((prevLang) => (prevLang === 'en' ? 'sp' : 'en'));
-        //console.log(language);
+        const newLanguage = language === "en"? "sp" : "en";
+        setLanguage(newLanguage);
+        localStorage.setItem("lang", newLanguage);
+        console.log(newLanguage);
     };
 
     const t = translations[language]; // Obten las traducciones del idioma actual
