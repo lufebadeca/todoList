@@ -7,7 +7,7 @@ import {Modal} from "../Modal";
 import { TodoForm } from "../TodoForm";
 
 const AppUI = ( ) => {
-  const { openModal, setOpenModal } = React.useContext(TodoContext);
+  const { openModal, setOpenModal, editing } = React.useContext(TodoContext);
 
 return (
     <div className="App">
@@ -20,7 +20,7 @@ return (
 
         <button className='addButton' data-message="Click me to submit"><i className='bi bi-plus' onClick={() => setOpenModal( !openModal) } ></i></button>
 
-        {openModal && <Modal> <TodoForm></TodoForm> </Modal>}
+        {openModal && <Modal> <TodoForm editing={editing}></TodoForm> </Modal>}
     </div>
   );
 }

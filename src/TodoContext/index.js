@@ -15,6 +15,8 @@ function TodoProvider({children}){
     const completedItems = list.filter(item=> !!item.completed).length;
     const totalItems = list.length;
 
+    const [editing, setEditing] = useState(false); //controller for 'edit' modal behavior 
+
     const addTask = (taskText) =>{
         const newTasks = [...list]; //copy tasks list
         newTasks.push({text: taskText, completed: false})
@@ -24,10 +26,8 @@ function TodoProvider({children}){
     const toggleTask = (id) => {
         //copy tasks list
         const newTasks = [...list];
-
         //find selected task, by id
         const task = newTasks.find( (task) => task.text === id );
-
         task.completed = !task.completed; // if true, turns into false, if false, into true
         updateItem(newTasks); //updating the task list with a 'completed' value updated
     };
@@ -47,28 +47,43 @@ function TodoProvider({children}){
     const updateSearchVal = (text)=>{
         setSearchValue(text);
     }
+    
+    const editTaskItem = (oldText, newText) =>{
+        const repeated = list.find( (item)=> item.text===newText );
+        if (repeated) {
+            alert("Esa tarea ya existe");
+        }
+        else{
+            const newList = list.map( (item)=>{
+                if (item.text===oldText) {
+                    item.text=newText
+                }
+                return item;
+            } );
+            updateItem(newList);
+        }
+    }
 
     const moveItem=(itemText, completedBool, direction)=>{
 
         const newList = [...list];
-        const index = newList.findIndex( (item)=> item.text==itemText );
-        console.log(index);
+        const index = newList.findIndex( (item)=> item.text===itemText );
         const newItem = { text: itemText, completed: completedBool };
 
         if(direction==="up" && index>0){
-            newList.splice(index,1);    //deletes the found item
-            newList.splice(index-1, 0, newItem) //adds the same element in a place after
+            [newList[index - 1], newList[index]] = [newList[index], newList[index - 1]];
             updateItem(newList);
         }
         if(direction==="down" && index < newList.length-1 ){
-            newList.splice(index,1);    //deletes the found item
-            newList.splice(index+1, 0, newItem) //adds the same element in a place before
+            [newList[index], newList[index + 1]] = [newList[index + 1], newList[index]];
             updateItem(newList);
         }
     }
 
     return(
-        <TodoContext.Provider value={ {addTask, completedItems, totalItems, list, filteredList, searchValue, updateSearchVal, moveItem, toggleTask, handleClearByID, loading, error, openModal, setOpenModal} }>
+        <TodoContext.Provider value={ {addTask, completedItems, totalItems, list,
+            filteredList, searchValue, updateSearchVal, moveItem, toggleTask, editTaskItem,
+            handleClearByID,loading, error, openModal, setOpenModal, editing, setEditing} }>
             {children}
         </TodoContext.Provider>
     );

@@ -34,8 +34,7 @@ function useLocalStorage (itemName, initialValue) {
             const localStorageItems = localStorage.getItem(itemName);
             if (!localStorageItems){    //if there is no data
                 localStorage.setItem(itemName, JSON.stringify(initialValue) );
-                parsedItem = initialValue;
-                setStorageItem(parsedItem);
+                setStorageItem(initialValue);
                 //const stringifiedList = JSON.parse(itemsList);
                 //localStorage.setItem('test1', stringifiedList);
               }else{
@@ -54,7 +53,7 @@ function useLocalStorage (itemName, initialValue) {
 
   //is necessary to update not only the local storage but also the state of the items list simultaneously
   const updateItem = (newItem) =>{
-    setStorageItem(newItem);  //updatinf the state first
+    setStorageItem(newItem);  //updating the state first
     const stringifiedList = JSON.stringify(newItem);
     localStorage.setItem(itemName, stringifiedList);
   };

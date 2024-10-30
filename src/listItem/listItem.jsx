@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './listItem.css'
+import { TodoContext } from "../TodoContext";
 
 //Here, the actual list item is converted into a <li></li> HTML element
 export function ListItem( props ) {
 
-    const { text, completed, toggleTask, handleClearByID, moveItem } = props;
+    const { text, completed, toggleTask, handleClearByID, editTaskItem, moveItem } = props;
+    const { openModal, setOpenModal, editing, setEditing } = React.useContext(TodoContext);
 
     const updateCheck = ()=>{
       toggleTask(text);
@@ -27,6 +29,13 @@ export function ListItem( props ) {
       setHovered(false);
     };
 
+    const editTask=()=>{
+      //setEditing(true);
+      //setOpenModal(true);
+      const newText= prompt("Ingrese el nuevo texto", text);
+      editTaskItem(text, newText);
+    }
+
     const rearrangeList = (e)=>{
       if(e.target.classList.contains("up-btn")){
         e.target.closest('li').classList.add("move-up");  //adds animation class to li
@@ -37,12 +46,10 @@ export function ListItem( props ) {
       }
       if(e.target.classList.contains("down-btn")){
         e.target.closest('li').classList.add("move-down"); //adds animation class to li
-        
         setTimeout( ()=>{
           moveItem(text, completed, "down");//new method to rearrange list
           e.target.closest('li').classList.remove("move-down");
         }, 400 );
-        //
       }
     };
 
@@ -72,8 +79,13 @@ export function ListItem( props ) {
         <span className="Icon-delete" >
           <i className="bi-x-lg" onClick={clearCurrentItem} ></i>
         </span>
+
         <span className="up-btn" onClick={rearrangeList}>▲</span>
         <span className="down-btn" onClick={rearrangeList}>▼</span>
+
+        <span className="edit-btn">
+          <i className="bi-pencil" onClick={ editTask }></i>
+        </span>
       </li>
     );
   }

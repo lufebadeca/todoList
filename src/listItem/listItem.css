@@ -63,6 +63,18 @@
     cursor: pointer;
   }
 
+  .edit-btn{
+    position: absolute;
+    right: 0;
+    top: 36%;
+    cursor: pointer;
+    color: gainsboro;
+  }
+
+  .edit-btn .bi-pencil:hover{
+    color: green;
+  }
+
   .up-btn{
     position: absolute;
     left: 50%;
@@ -70,7 +82,6 @@
     color: rgb(169, 189, 207);
     cursor: pointer;
     transition-duration: 400ms;
-
 }
 .up-btn:hover{
     scale: 1.4;
