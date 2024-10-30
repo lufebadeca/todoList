@@ -11,8 +11,6 @@ import { LanguageSelector } from "../LanguageSelector";
 const AppUI = ( ) => {
   const { openModal, setOpenModal, editing } = React.useContext(TodoContext);
 
-  const { language, toggleLanguage } = useLanguage();
-
 return (
     <div className="App">
 

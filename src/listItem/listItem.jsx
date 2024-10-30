@@ -43,14 +43,14 @@ export function ListItem( props ) {
       if(e.target.classList.contains("up-btn")){
         e.target.closest('li').classList.add("move-up");  //adds animation class to li
         setTimeout( ()=>{
-          moveItem(text, completed, "up"); //new method to rearrange list
+          moveItem(text, "up"); //new method to rearrange list
           e.target.closest('li').classList.remove("move-up");
         }, 400 );
       }
       if(e.target.classList.contains("down-btn")){
         e.target.closest('li').classList.add("move-down"); //adds animation class to li
         setTimeout( ()=>{
-          moveItem(text, completed, "down");//new method to rearrange list
+          moveItem(text, "down");//new method to rearrange list
           e.target.closest('li').classList.remove("move-down");
         }, 400 );
       }

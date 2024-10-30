@@ -1,10 +1,13 @@
 import { useState } from "react";
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
+import {useLanguage } from "../LanguageContext";
 
 const TodoContext = React.createContext();
 
 function TodoProvider({children}){
+
+    const {t} = useLanguage();
 
     /*now, instead of using the regular useState, we use our custom state, the initial state was already
     set in the custom state, instead, we give custom parameters: itemName and initial val
@@ -14,8 +17,6 @@ function TodoProvider({children}){
     const [openModal, setOpenModal] = useState(false);
     const completedItems = list.filter(item=> !!item.completed).length;
     const totalItems = list.length;
-
-    const [editing, setEditing] = useState(false); //controller for 'edit' modal behavior 
 
     const addTask = (taskText) =>{
         const newTasks = [...list]; //copy tasks list
@@ -51,7 +52,8 @@ function TodoProvider({children}){
     const editTaskItem = (oldText, newText) =>{
         const repeated = list.find( (item)=> item.text===newText );
         if (repeated) {
-            alert("Esa tarea ya existe");
+            //alert( t.alreadyExists );
+            alert( t.alreadyExists );
         }
         else{
             const newList = list.map( (item)=>{
@@ -64,7 +66,7 @@ function TodoProvider({children}){
         }
     }
 
-    const moveItem=(itemText, completedBool, direction)=>{
+    const moveItem=(itemText, direction)=>{
 
         const newList = [...list];
         const index = newList.findIndex( (item)=> item.text===itemText );
@@ -82,7 +84,7 @@ function TodoProvider({children}){
     return(
         <TodoContext.Provider value={ {addTask, completedItems, totalItems, list,
             filteredList, searchValue, updateSearchVal, moveItem, toggleTask, editTaskItem,
-            handleClearByID,loading, error, openModal, setOpenModal, editing, setEditing} }>
+            handleClearByID,loading, error, openModal, setOpenModal} }>
             {children}
         </TodoContext.Provider>
     );
