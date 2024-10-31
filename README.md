@@ -31,13 +31,25 @@ This ToDo Manager is an interactive tool to enter, store, organize and keep trac
 ## Estructura del Proyecto
 
 ```
-quick-whatscall/
+todoList/
 │
-├── data/
-│   └── CountryCodes.json   # Archivo JSON con los códigos de países
-├── index.html              # Archivo HTML principal de la app
-├── style.css               # (Opcional) Archivo CSS personalizado
-└── main.js                 # Lógica JavaScript para la interacción de la app
+├── assets              # React assets folder
+├── build/
+│   └── index.html      # Build executable
+├── node_modules        # Node installed dependencies
+├── public              # React public folder
+└── src                 # Javascript application and components logic
+    └── App             # Main app logic
+    └── counter         # counter with graphic component logic
+    └── emptyTodos      # 'empty list' component logic
+    └── listItem        # list or Todo Item component logic
+    └── loadingTodos    # animated 'loading' component logic
+    └── Modal           # Modal component logic
+    └── searchInput     # search or filter component logic
+    └── todoContext     # Context handler for the global ToDo properties and states 
+    └── todoForm        # enter new Todo form logic
+    └── todoList        # list container component logic
+    └── todosError      # 'error' component logic
 ```
 
 ## Usage
