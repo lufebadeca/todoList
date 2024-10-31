@@ -3,7 +3,7 @@
 This ToDo Manager is an interactive tool to enter, store, organize and keep track of ToDo's. The user can enter any text they wish and once created, mark the item as completed or not completed accordingly, while keeping metrics of completion percentages on the total list. The user can also modify the content of a ToDo item and rearrange its position within the list at any time and also delete them when no longer considered relevant. The application makes use of the browser's local storage API for data persistance of the input ToDo's.
 <br>
 
-<img src=![chrome-capture-2024-10-31](https://github.com/user-attachments/assets/7042db01-8028-45d7-9797-6928843dda97) alt="drawing" style="width:350px;"/>
+<img src="https://github.com/user-attachments/assets/7042db01-8028-45d7-9797-6928843dda97" alt="drawing" style="width:350px;"/>
 
 ## Characteristics
 
