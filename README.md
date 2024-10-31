@@ -33,23 +33,25 @@ This ToDo Manager is an interactive tool to enter, store, organize and keep trac
 ```
 todoList/
 │
-├── assets              # React assets folder
+├── assets                # React assets folder
 ├── build/
-│   └── index.html      # Build executable
-├── node_modules        # Node installed dependencies
-├── public              # React public folder
-└── src                 # Javascript application and components logic
-    └── App             # Main app logic
-    └── counter         # counter with graphic component logic
-    └── emptyTodos      # 'empty list' component logic
-    └── listItem        # list or Todo Item component logic
-    └── loadingTodos    # animated 'loading' component logic
-    └── Modal           # Modal component logic
-    └── searchInput     # search or filter component logic
-    └── todoContext     # Context handler for the global ToDo properties and states 
-    └── todoForm        # enter new Todo form logic
-    └── todoList        # list container component logic
-    └── todosError      # 'error' component logic
+│   └── index.html        # Build executable
+├── node_modules          # Node installed dependencies
+├── public                # React public folder
+└── src                   # Javascript application and components logic
+    └── App               # Main app logic
+    └── LangaugeContext   # Sets the language context provider and preset translations
+    └── LanguageSelector  # Language selector component logic
+    └── counter           # counter with graphic component logic
+    └── emptyTodos        # 'empty list' component logic
+    └── listItem          # list or Todo Item component logic
+    └── loadingTodos      # animated 'loading' component logic
+    └── Modal             # Modal component logic
+    └── searchInput       # search or filter component logic
+    └── todoContext       # Context handler for the global ToDo properties and states 
+    └── todoForm          # enter new Todo form logic
+    └── todoList          # list container component logic
+    └── todosError        # 'error' component logic
 ```
 
 ## Usage
