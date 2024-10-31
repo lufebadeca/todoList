@@ -59,9 +59,10 @@ todoList/
 1. Choose the language of your preference between English and Spanish.
 2. Click on the magenta button (+) on the bottom right corner to add a new ToDo.
 3. Type your ToDo text and click Add.
-4. Optional: click on the pencil icon on the right end of your ToDo to modify its content.
-5. Optional: click on the X icon on the top right end of your ToDo to permanently delete the ToDo.
-6. When having two or more ToDo's, click on the up or down arrows in the center of a ToDo to change its position in the list.
+4. Click on the check icon on the left end of your ToDo to mark as completed.
+5. Optional: click on the pencil icon on the right end of your ToDo to modify its content.
+6. Optional: click on the X icon on the top right end of your ToDo to permanently delete the ToDo.
+7. When having two or more ToDo's, click on the up or down arrows in the center of a ToDo to change its position in the list.
 
 ### Requirements and considerations
 - Although there is no character limits, we recommend to keep your ToDo texts as short and concise as possible.
