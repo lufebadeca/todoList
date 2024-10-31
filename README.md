@@ -1,67 +1,95 @@
-# Getting Started with Create React App
+# Interactive ToDo List Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This ToDo Manager is an interactive tool to enter, store, organize and keep track of ToDo's. The user can enter any text they wish and once created, mark the item as completed or not completed accordingly, while keeping metrics of completion percentages on the total list. The user can also modify the content of a ToDo item and rearrange its position within the list at any time and also delete them when no longer considered relevant. The application makes use of the browser's local storage API for data persistance of the input ToDo's.
 
-## Available Scripts
+## Characteristics
 
-In the project directory, you can run:
+- Multilanguage selection (English/Spanish) with data persistance
+- Completion rate graphics updated in real-time
+- Easy-to-use interface with high reactivity and intuitive
+- Feature to rearrange single list items individualy
+- Filter feature to search by name useful when many items in the list
+- Edit option to modify single list items at any time
+- Delete feature to permanently remove an item
 
-### `npm start`
+## Instalation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the project repository
+   ```bash
+   git clone https://github.com/your_user/todoList.git
+   ```
+2. Move to the recently created repository folder and install dependencies
+   ```bash
+   cd todoList
+   npm install
+   ```
+3. Execute the project with the script 'npm start'
+   ```bash
+   npm start
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Estructura del Proyecto
 
-### `npm test`
+```
+quick-whatscall/
+│
+├── data/
+│   └── CountryCodes.json   # Archivo JSON con los códigos de países
+├── index.html              # Archivo HTML principal de la app
+├── style.css               # (Opcional) Archivo CSS personalizado
+└── main.js                 # Lógica JavaScript para la interacción de la app
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+1. Choose the language of your preference between English and Spanish.
+2. Click on the magenta button (+) on the bottom right corner to add a new ToDo.
+3. Type your ToDo text and click Add.
+4. Optional: click on the pencil icon on the right end of your ToDo to modify its content.
+5. Optional: click on the X icon on the top right end of your ToDo to permanently delete the ToDo.
+6. When having two or more ToDo's, click on the up or down arrows in the center of a ToDo to change its position in the list.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Requirements and considerations
+- Although there is no character limits, we recommend to keep your ToDo texts as short and concise as possible.
+- The application validates duplicates when trying to enter new toDo's or editing an existing one. This validation is case insensitive.
+- The filter functionality is not case sensitive either, so you can find even words with unusual accents by entering equivalent regular letters
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technical details
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The application was developed with React and uses github pages for deployment as it only comprises front-end side.
+- Data persistance is achieved using the web browser's local storage by means of the localStorage API, previous String parsing of the list.
+- The multi-language feature was developed using React useLanguage.
+- The new ToDo Modal was handled using React portals.
+- The props management was handled using React useContext and in some cases, direct prop passing between parent-child components.
 
-### `npm run eject`
+## Tecnologías Utilizadas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6)**
+- **React**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Example ToDo list structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Each call to localStorage.setItem receives the storageItem name `test1` and the list ToDo list in json string format:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```json
+[
+  {
+    "text": "Bathe my cat",
+    "completed": "True"
+  },
+  {
+    "text": "Chop vegetables",
+    "completed": "False"
+  },
+  // More ToDo's...
+]
+```
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
+This project is under MIT License. Consult the file `LICENSE` for more details.
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
