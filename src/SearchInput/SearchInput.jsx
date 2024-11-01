@@ -10,17 +10,14 @@ const SearchInput = ( ) =>{
     //useContext
     const {searchValue, updateSearchVal} = React.useContext(TodoContext);
 
-    const updateText = (e) =>{
-        const newVal = e.target.value;
-        updateSearchVal(newVal);
-    }
-
     return(
         <>
             <label htmlFor='searchBox' >{t.filter}</label>
-            <input type='text' id='searchBox' name='searchBox' 
+            <input 
+                type='text' id='searchBox' name='searchBox' 
                 placeholder={t.filterPlaceholder} value={searchValue} 
-                onChange={updateText} className='input'>
+                onChange={ (e)=>updateSearchVal(e.target.value.trim() ) }
+                className='input'>
             </input>
         </>
     )

@@ -33,7 +33,7 @@ export function ListItem( props ) {
     const editTask=()=>{
       //setEditing(true);
       //setOpenModal(true);
-      const newText= prompt(t.editTask, text).toLowerCase();
+      const newText= prompt(t.editTask, text).trim();
       if (newText){
         editTaskItem(text, newText);
       }

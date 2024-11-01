@@ -6,7 +6,7 @@ import {useLanguage } from "../LanguageContext";
 
 function TodoForm() {
 
-    const {t}=useLanguage(); //translations for current language
+    const {language, t}=useLanguage(); //translations for current language
 
     const [newTaskVal, setNewTaskVal] = React.useState("");
     const {addTask, setOpenModal, list} = React.useContext(TodoContext);
@@ -17,15 +17,14 @@ function TodoForm() {
 
     const onSubmit=(e)=>{
         e.preventDefault();
-        const coincidences = list.filter( (item)=>item.text===newTaskVal.trim().toLowerCase() );
-        //console.log(coincidences);
-        if( newTaskVal.trim().length===0 ){
+        const coincidences = list.filter( (item)=>item.text.localeCompare( newTaskVal.trim(), language, { sensitivity: 'base' } )===0 );
+        if( newTaskVal.length===0 ){
             alert(t.addTodo);
         }else if ( coincidences.length>0 ){
             alert(t.alreadyExists);
             setNewTaskVal("");
         }else{
-            addTask( newTaskVal.trim().toLowerCase() );
+            addTask( newTaskVal.trim() );
             setOpenModal(false);
         }
     };

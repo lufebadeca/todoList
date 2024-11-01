@@ -15,7 +15,6 @@ export const LanguageProvider = ({ children }) => {
         const newLanguage = language === "en"? "sp" : "en";
         setLanguage(newLanguage);
         localStorage.setItem("lang", newLanguage);
-        //console.log(newLanguage);
     };
 
     const t = translations[language]; // Obten las traducciones del idioma actual

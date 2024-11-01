@@ -7,7 +7,7 @@ const TodoContext = React.createContext();
 
 function TodoProvider({children}){
 
-    const {t} = useLanguage();
+    const {language, t} = useLanguage();
 
     /*now, instead of using the regular useState, we use our custom state, the initial state was already
     set in the custom state, instead, we give custom parameters: itemName and initial val
@@ -41,7 +41,7 @@ function TodoProvider({children}){
 
     //derived state, updates searchValue every time input text is updated (toLowerCase for all coincidences)
     const filteredList = list.filter( 
-        (taskItem)=> taskItem.text.toLowerCase().includes(searchValue)
+        (taskItem)=> taskItem.text.toLowerCase().includes(searchValue.toLowerCase())
     );
 
     //function to update search value
@@ -50,7 +50,7 @@ function TodoProvider({children}){
     }
     
     const editTaskItem = (oldText, newText) =>{
-        const repeated = list.find( (item)=> item.text===newText );
+        const repeated = list.find( (item)=> item.text.localeCompare(newText, language, { sensitivity: 'base' } )===0 );
         if (repeated) {
             //alert( t.alreadyExists );
             alert( t.alreadyExists );
